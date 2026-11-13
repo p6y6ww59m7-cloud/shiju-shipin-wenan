@@ -4,7 +4,7 @@ import { mkdtemp, writeFile, readdir, rm, mkdir, readFile } from 'node:fs/promis
 import path from 'node:path';
 import os from 'node:os';
 import { extractLinks } from '../core.mjs';
-import { platformFor, platformVideoId, kuaishouData } from '../platforms.mjs';
+import { platformFor, platformVideoId, playbackURL, kuaishouData } from '../platforms.mjs';
 import { cookieText, runTool, downloadWithEngine,networkProxy } from '../downloader.mjs';
 
 test('mixed share text supports five platforms, short links and rejects spoofed hosts and credentials', () => {
@@ -21,6 +21,35 @@ test('Kuaishou matching excludes adjacent recommended photos', () => {
   const data={feed:[{photoId:'wrong',photoUrl:'https://cdn.test/wrong.mp4'},{photoId:'wanted',caption:'正确作品',videoResource:{url:'https://cdn.test/target.mp4'}}]};
   assert.deepEqual(kuaishouData(data,'wanted').map(c=>c.url),['https://cdn.test/target.mp4']);
   assert.deepEqual(kuaishouData(data,''),[]);
+});
+
+test('Douyin search and profile modals navigate to the requested work and preserve source identity', () => {
+  const id='7476702588022623515', canonical=`https://www.douyin.com/video/${id}`;
+  for (const url of [
+    `https://www.douyin.com/user/self/search/example?aid=test&modal_id=${id}&type=general`,
+    `https://www.douyin.com/jingxuan/search/example?modal_id=${id}`,
+    `https://www.douyin.com/search/example?aweme_id=${id}`,
+    `https://www.douyin.com/user/example?modal_id=${id}`,
+    `https://www.iesdouyin.com/share/video/${id}/?source=test`
+  ]) {
+    assert.equal(playbackURL(url),canonical);
+    assert.equal(platformVideoId(playbackURL(url)),platformVideoId(url));
+  }
+  assert.equal(playbackURL(`${canonical}?modal_id=1111111111111111111`),canonical);
+});
+
+test('playback routing keeps unresolved links and photo posts without inventing a video id', () => {
+  for (const url of [
+    'https://v.douyin.com/Example/',
+    'https://www.douyin.com/search/example',
+    'https://www.douyin.com/search/example?modal_id=not-a-video',
+    'https://www.douyin.com/?modal_id=123%2F4567890123',
+    'https://www.douyin.com/note/7476702588022623515',
+    'https://www.douyin.com/slides/7476702588022623515',
+    'https://www.youtube.com/watch?v=example',
+    'https://www.bilibili.com/video/BV13x41117TL?p=2',
+    'https://douyin.com.evil.test/?modal_id=7476702588022623515'
+  ]) assert.equal(playbackURL(url),url);
 });
 
 test('cookie export preserves session cookies and drops injected rows', () => {

@@ -9,7 +9,7 @@ import { promisify } from 'node:util';
 import { Browser } from './browser.mjs';
 import { extractLinks, videoId, findVideoObjects, formatsFromObject, safeName, saveVideo, unusedPath } from './core.mjs';
 import { Transcriber, busyTranscript } from './transcription.mjs';
-import { platforms, platformFor, platformVideoId, kuaishouData } from './platforms.mjs';
+import { platforms, platformFor, platformVideoId, playbackURL, kuaishouData } from './platforms.mjs';
 import { downloadWithEngine, networkProxy } from './downloader.mjs';
 import { downloadIssue, pageGate } from './workflow.mjs';
 import { savedVideo,sourceKey } from './cache.mjs';
@@ -186,7 +186,7 @@ async function attach(j) {
     }
   });
   await cdp.call('Page.addScriptToEvaluateOnNewDocument',{source:`document.addEventListener('play',e=>{if(e.target instanceof HTMLMediaElement)e.target.muted=true},true);`});
-  await cdp.call('Page.navigate', { url: j.url });
+  await cdp.call('Page.navigate', { url: playbackURL(j.url) });
   if (j.cancelled || active !== j) { cdp.close(); await browser.closePage(targetId); return; }
   j.status = 'waiting'; j.started = Date.now();
   message(j, '正在自动识别视频，无需操作…');

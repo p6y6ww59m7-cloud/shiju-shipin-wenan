@@ -23,6 +23,17 @@ export function platformVideoId(value) {
   return u.pathname.match(/\/(?:video|note|slides|share\/video)\/(\d{10,})/)?.[1] || u.searchParams.get('modal_id') || u.searchParams.get('aweme_id') || '';
 }
 
+// Search/profile modal URLs may redirect to a search page without opening the work.
+// Navigate to the known work directly while retaining the original URL as provenance.
+export function playbackURL(value) {
+  if (platformFor(value)?.id !== 'douyin') return value;
+  const u = new URL(value);
+  // Photo posts must not be silently converted into video links.
+  if (/\/(?:note|slides)\//.test(u.pathname)) return value;
+  const id = platformVideoId(value);
+  return /^\d{10,}$/.test(id) ? `https://www.douyin.com/video/${id}` : value;
+}
+
 // Match the requested photo before inspecting nested URLs; recommendations are not exports.
 export function kuaishouData(data, expectedId) {
   if (!expectedId) return [];
