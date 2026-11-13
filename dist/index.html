@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#294b3b"><title>拾句 · 视频与文案工作台</title><meta name="description" content="让好文案被看见。横向对比、逐段挑选、精选组稿，保存每一次选择。"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/media.css"><script src="/app.js" type="module"></script></head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#/compare"><span class="brand-mark">✳</span><span>拾句<small>VIDEO & COPY STUDIO</small></span></a>
+    <div class="workspace"><span class="avatar">豪</span><div>我的视频与文案工作室<small>个人工作空间</small></div><span class="workspace-dot"></span></div>
+    <div class="nav-label">工作空间</div>
+    <nav id="navigation" aria-label="主导航"></nav>
+    <div class="topic-label"><span class="nav-label">我的选题</span><button class="icon-button" data-action="new-topic" title="新建选题" aria-label="新建选题">＋</button></div>
+    <div id="topic-list" class="topic-list"></div>
+    <div class="sidebar-bottom"><div class="little-spark">✳</div><p>判断可以借助 AI，<br>选择始终属于你。</p><button class="connection-link" data-action="connections"><span class="status-dot"></span><span id="connection-caption">连接设置</span><span>↗</span></button></div>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><div class="breadcrumb">我的工作室 <span>/</span> <strong id="breadcrumb-current">对比挑选台</strong></div><div class="topbar-right"><span id="save-status" class="save-status"><span class="status-dot"></span>本机已保存</span><button class="icon-button" data-action="help" title="使用说明" aria-label="使用说明">?</button></div></header>
+    <main id="main"><div class="loading-page"><span class="loading-spinner"></span>正在打开工作台…</div></main>
+  </div>
+  <dialog id="modal"><div id="modal-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <button id="selection-float" class="selection-float" hidden>＋ 收藏选中文字</button>
+</body></html>

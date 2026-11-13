@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>视频导出助手 · 多平台口播转文字</title>
+<style>
+:root{--bg:#f4f6f5;--ink:#1d2927;--muted:#79847f;--line:#e1e7e3;--green:#196a50;--mint:#e5f2e9;--orange:#ac6321}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;color:var(--ink);font-size:14px;line-height:1.6}button,textarea{font:inherit}button{cursor:pointer;border:0}button:disabled{opacity:.5;cursor:wait}button:focus-visible,textarea:focus-visible{outline:3px solid #84b99c;outline-offset:3px}header{height:72px;background:#ffffffb8;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 44px}.brand{display:flex;align-items:center;gap:11px;font-size:16px;font-weight:650;letter-spacing:.3px}.mark{display:grid;place-items:center;border-radius:12px;background:var(--ink);width:35px;height:35px;color:#c9f5d4}.mark svg{width:21px}.status{font-size:12px;color:#698273;display:flex;align-items:center;gap:7px}.dot{width:6px;height:6px;background:#4d9968;border-radius:50%;box-shadow:0 0 0 4px #e7f3eb}main{max-width:1080px;margin:auto;padding:43px 44px 30px}.eyebrow{font-size:11px;letter-spacing:2.2px;color:var(--green);font-weight:650;margin-bottom:11px}h1{font-size:32px;line-height:1.3;letter-spacing:-.8px;margin:0 0 13px;font-weight:650}.intro{margin:0;color:#78817d;font-size:13px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:20px;margin-top:29px}.card{background:white;border:1px solid var(--line);border-radius:17px;overflow:hidden}.entry{padding:23px}.card-title{font-weight:650;font-size:14px;display:flex;align-items:center;gap:9px}.tiny-label{margin-left:auto;background:#f3f5f3;padding:2px 8px;color:var(--muted);font-size:10px;border-radius:5px;font-weight:400}textarea{display:block;width:100%;height:145px;resize:vertical;border:1px solid #e2e8e3;background:#f9faf9;padding:15px;border-radius:10px;margin:16px 0 11px;font-size:13px;line-height:1.9;color:var(--ink)}textarea::placeholder{color:#a2aaa4}.input-info{font-size:11px;color:#8e9691;display:flex;justify-content:space-between}.entry-bottom{margin-top:21px;display:flex;align-items:center;gap:10px}.primary{background:var(--green);color:white;padding:11px 20px;border-radius:8px;display:inline-flex;align-items:center;gap:15px;font-weight:550;font-size:13px}.primary:hover{background:#15563f}.secondary{border:1px solid var(--line);background:white;padding:10px 13px;border-radius:8px;color:#67746d;font-size:12px}.secondary:hover{background:#f6f8f5}.guide{padding:22px 22px;background:#edf2eb;border-color:#e1e8dd;display:flex;flex-direction:column}.guide .card-title{font-size:13px}.steps{margin:23px 0 0;list-style:none;padding:0;display:grid;gap:19px}.steps li{display:flex;gap:11px;align-items:flex-start}.num{display:grid;place-items:center;flex-shrink:0;width:22px;height:22px;border:1px solid #cdd9c9;border-radius:50%;font-size:10px;color:#6e826a}.step-title{font-size:12px;color:#43533e;margin-top:1px}.step-note{font-size:11px;color:#889480;margin:3px 0 0;line-height:1.8}.guide-note{margin-top:auto;padding-top:19px;font-size:10px;color:#88947f}.tasks-head{display:flex;align-items:center;margin:29px 1px 13px;gap:9px}.tasks-head h2{font-size:14px;font-weight:650;margin:0}.count{font-size:11px;padding:1px 7px;background:#e7ece7;color:#7b887c;border-radius:5px}.task-actions{margin-left:auto;display:flex;gap:15px}.text-button{background:none;color:#849088;padding:3px 0;font-size:11px}.text-button:hover{color:var(--green)}.empty{text-align:center;padding:27px 25px 28px}.empty-icon{display:grid;place-items:center;width:39px;height:39px;margin:0 auto 11px;background:#f0f5ee;color:#91a58d;border-radius:12px}.empty-icon svg{width:21px}.empty-title{font-size:12px;color:#667260}.empty p{font-size:11px;color:#a0a99b;margin:5px 0 0}.task{padding:19px 22px;border-bottom:1px solid #eef1ed}.task:last-child{border-bottom:0}.task-main{display:flex;gap:13px;align-items:center}.task-symbol{width:37px;height:43px;flex-shrink:0;background:#f0f3ef;border-radius:7px;display:grid;place-items:center;color:#8e9f88}.task-symbol.done{background:var(--mint);color:var(--green)}.task-symbol.error{background:#fff0e2;color:#b28157}.task-details{flex:1;min-width:0}.task-name{font-size:12px;font-weight:550;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:570px}.task-message{font-size:11px;color:#8a9588;margin-top:5px;word-break:break-word}.task-message.error{color:var(--orange)}.task-tag{font-size:10px;background:#f3f5f2;color:#7a8776;padding:3px 8px;border-radius:5px;flex-shrink:0}.task-tag.done{background:var(--mint);color:var(--green)}.row-buttons{display:flex;gap:12px;margin-left:12px}.row-buttons button{background:transparent;color:var(--green);font-size:11px;white-space:nowrap}.progress{height:3px;border-radius:9px;background:#edf1eb;margin-top:13px;overflow:hidden}.progress div{height:100%;background:#6ca379;transition:width .2s}.progress .indeterminate{width:35%;animation:slide 1.8s infinite}@keyframes slide{from{transform:translateX(-100%)}to{transform:translateX(350%)}}.candidates{border-top:1px dashed var(--line);margin-top:15px;padding-top:13px;display:grid;gap:14px}.candidate{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.candidate-info{font-size:11px;color:#74816f;flex:1}.candidate video{width:100%;max-height:330px;background:#17221d;border-radius:9px}.small-primary{background:var(--green);color:white;padding:7px 12px;border-radius:6px;font-size:11px}.folder{margin-top:18px;display:flex;align-items:center;font-size:11px;color:#869280;gap:7px;min-height:35px}.folder svg{width:15px;flex-shrink:0}.folder-path{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.folder button{margin-left:auto;white-space:nowrap}.footer{margin-top:26px;padding-top:17px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#a0aaa0;font-size:10px}.toast{position:fixed;bottom:27px;left:50%;transform:translateX(-50%);padding:11px 20px;background:#273d31;color:#fff;border-radius:9px;font-size:12px;max-width:80%;box-shadow:0 5px 30px #263b2820;z-index:9}.toast[hidden]{display:none}.error-banner{background:#fff4e8;color:#986331;border:1px solid #eeddc9;border-radius:8px;padding:10px 13px;font-size:12px;margin-top:14px}.error-banner[hidden]{display:none}@media(max-width:800px){header{padding:0 24px}main{padding:30px 24px}.workspace{grid-template-columns:1fr}.guide{display:none}h1{font-size:28px}.status{font-size:10px}}@media(max-width:520px){header{padding:0 18px}main{padding:28px 18px}.entry{padding:18px}.task{padding:15px}.task-tag{display:none}.row-buttons{gap:4px}.footer span:last-child{display:none}}
+.speech-options{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:17px;padding-top:15px;border-top:1px solid #edf1eb;flex-wrap:wrap}.auto-transcribe{display:flex;align-items:center;gap:7px;font-size:12px;color:#52664f;cursor:pointer}.auto-transcribe input{accent-color:var(--green);width:15px;height:15px;margin:0}.engine-note{font-size:10px;color:#91a08b}.transcript-row{margin-top:15px;padding:13px 0 0 50px;border-top:1px solid #edf1eb;display:flex;gap:12px;align-items:center;flex-wrap:wrap}.transcript-status{font-size:11px;color:#82907b;flex:1;min-width:180px}.transcript-status.done{color:var(--green)}.transcript-status.error{color:var(--orange)}.transcript-buttons{display:flex;gap:9px;align-items:center}.transcript-buttons button{font-size:11px;padding:6px 10px}.transcript-row .progress{width:100%;margin:0}.task-main{align-items:center}.row-buttons{flex-wrap:wrap}.speech-dialog{width:min(840px,90vw);max-height:90vh;border:1px solid #dae4d9;border-radius:18px;padding:25px;background:#fafcf9;color:var(--ink);box-shadow:0 22px 90px #172e2330}.speech-dialog::backdrop{background:#17291e66;backdrop-filter:blur(3px)}.dialog-heading{display:flex;align-items:center;gap:15px}.dialog-heading h2{font-size:18px;margin:0}.dialog-heading button{margin-left:auto;font-size:19px;background:transparent;color:#7c8c77}.dialog-title{font-size:12px;color:#6e7e68;margin:12px 0 6px;max-height:50px;overflow:hidden}.dialog-note{font-size:10px;color:#94a18e;margin:0 0 14px}.speech-dialog textarea{height:340px;min-height:180px;background:white;margin:0;font-size:14px;line-height:2;border-color:#dae4d9;padding:20px;resize:vertical}.dialog-footer{display:flex;align-items:center;gap:9px;margin-top:17px;flex-wrap:wrap}.dialog-footer .primary{padding:9px 17px}.dialog-footer .dialog-count{margin-left:auto;font-size:11px;color:#91a08b}.transcript-row .small-primary{color:white}.entry-bottom{flex-wrap:wrap}@media(max-width:600px){.transcript-row{padding-left:0}.dialog-footer .dialog-count{width:100%;margin-left:0}}
+select,.network-options input{font:inherit;border:1px solid var(--line);border-radius:7px;background:white;padding:8px;max-width:220px}.entry-bottom{flex-wrap:wrap}.network-options{margin-top:14px;font-size:11px;color:var(--muted)}.network-options summary{cursor:pointer}.network-options label{display:inline-flex;gap:8px;align-items:center;margin:12px 8px 0 0}.network-options p{line-height:1.8}.entry-bottom select{max-width:115px}.transcription-choice{display:flex;align-items:center;gap:8px;margin:12px 0 0 50px;font-size:12px;color:#52664f;cursor:pointer}.transcription-choice input{accent-color:var(--green);width:16px;height:16px}.transcription-choice .engine-note{margin-left:8px}#retry-input[hidden]{display:none}</style>
+</head>
+<body>
+<header><div class="brand"><div class="mark"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></svg></div>视频导出助手</div><div class="status"><i class="dot"></i><span id="connection">本机运行 · 文件存到本地</span></div></header>
+<main>
+<div class="eyebrow">SAVE WHAT YOU WANT TO KEEP</div>
+<h1>粘贴链接，自动保存视频。</h1>
+<p class="intro">支持抖音、YouTube、B站、快手、X / Twitter。需要文字时，勾选对应视频即可。</p>
+<div class="workspace">
+<section class="card entry"><div class="card-title">粘贴视频链接<span class="tiny-label">支持批量</span></div>
+<textarea id="links" aria-label="视频分享链接" placeholder="粘贴抖音、YouTube、B站、快手、X / Twitter 的视频链接。&#10;&#10;支持短链接、完整网址，也支持带文案的分享内容。"></textarea>
+<div class="input-info"><span>一次最多 30 条，按顺序处理</span><span id="link-count">粘贴后自动开始</span></div>
+<div class="speech-options"><span class="engine-note">粘贴后自动下载 · 每条视频可单独勾选「转文字」</span><span class="engine-note" id="engine">正在检查口播识别…</span></div>
+<button class="secondary" id="retry-input" hidden>重试添加</button>
+<details class="network-options"><summary>海外平台网络设置</summary><label>代理地址 <input id="proxy" aria-label="海外平台代理地址" placeholder="auto"></label><button class="secondary" id="save-network">保存网络设置</button><p>auto 自动使用本机已运行的代理；direct 直接连接。也可填写 http://127.0.0.1:端口，仅用于 YouTube 和 X。</p></details><div class="error-banner" id="error" role="alert" hidden></div></section>
+<aside class="card guide"><div class="card-title">你只需粘贴链接</div><ol class="steps"><li><span class="num">1</span><div><div class="step-title">自动下载视频</div><p class="step-note">支持一次粘贴多条分享链接<br>自动识别平台并按顺序保存</p></div></li><li><span class="num">2</span><div><div class="step-title">按需转文字</div><p class="step-note">勾选哪条，就转写哪条<br>文稿和 SRT 字幕一起保存</p></div></li></ol><div class="guide-note">确实需要登录或验证时，任务会提示你。完成后自动继续。</div></aside>
+</div>
+<div class="tasks-head"><h2>导出记录</h2><span class="count" id="total-count">0</span><div class="task-actions"><button class="text-button" id="pause">暂停队列</button><button class="text-button" id="clear">清空记录</button></div></div>
+<section class="card" id="tasks"><div class="empty"><div class="empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="m10 8 5 4-5 4z"/></svg></div><div class="empty-title">等待你的第一条链接</div><p>导出进度、需要协助的提示和已保存文件都会出现在这里</p></div></section>
+<div class="folder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7V5h7l2 3h9v12H3z"/></svg><span>保存位置</span><span class="folder-path" id="folder-path">下载 / 抖音视频导出</span><button class="text-button" id="folder">打开文件夹 ↗</button></div>
+<div class="footer"><span>视频原有音轨保留 · 口播在本机识别</span><span>自动识别的人名、术语和数字，建议核对原视频</span></div>
+</main><div class="toast" id="toast" role="status" hidden></div>
+<dialog id="transcript-modal" class="speech-dialog" aria-labelledby="transcript-heading"><div class="dialog-heading"><h2 id="transcript-heading">口播文稿</h2><button id="close-transcript" aria-label="关闭文稿">×</button></div><p class="dialog-title" id="transcript-title"></p><p class="dialog-note" id="transcript-model"></p><p class="dialog-note">根据视频中的声音自动识别。人名、术语和数字建议核对原视频。</p><textarea id="transcript-text" readonly aria-label="口播全文"></textarea><div class="dialog-footer"><button class="primary" id="copy-transcript">复制全文</button><button class="secondary" id="open-txt">打开 TXT</button><button class="secondary" id="open-srt">打开 SRT 字幕</button><span class="dialog-count" id="transcript-count"></span></div></dialog>
+<script type="module">
+import { createAutoIntake } from '/intake.mjs';
+const token='__SESSION_TOKEN__';
+const $=s=>document.querySelector(s);
+let state={jobs:[],paused:false}, lastSignature='', busy=false, toastTimer, currentTranscriptId=null;
+const previews=new Map();
+const labels={queued:'排队中',opening:'打开中',waiting:'等待识别',downloading:'保存中',done:'已保存',error:'未完成',cancelled:'已跳过',interrupted:'已中断',cancelling:'取消中'};
+function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
+function toast(text){$('#toast').textContent=text;$('#toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').hidden=true,4000)}
+function error(text){$('#error').textContent=text;$('#error').hidden=!text}
+async function api(path,body){const r=await fetch('/api/'+path,{method:body===undefined?'GET':'POST',headers:{'x-session-token':token,...(body===undefined?{}:{'Content-Type':'application/json'})},body:body===undefined?undefined:JSON.stringify(body)});const d=await r.json();if(!r.ok)throw new Error(d.error||'操作失败');return d}
+function button(text,action,cls=''){const b=el('button',cls,text);b.onclick=async()=>{b.disabled=true;try{await action()}catch(e){toast(e.message)}finally{b.disabled=false}};return b}
+function size(n){return n>1048576?(n/1048576).toFixed(1)+' MB':Math.round(n/1024)+' KB'}
+function time(n){return n>=60?Math.floor(n/60)+'分'+Math.round(n%60)+'秒':Math.max(1,Math.round(n))+'秒'}
+async function showTranscript(j){const d=await api('transcript?id='+encodeURIComponent(j.id));currentTranscriptId=j.id;$('#transcript-title').textContent=d.title||j.title;$('#transcript-text').value=d.text;$('#transcript-count').textContent=d.text.length+' 字 · '+d.segments.length+' 条字幕';$('#transcript-model').textContent='识别模型：'+(d.engine||'早期转写结果');$('#transcript-modal').showModal()}
+function render(){
+ $('#total-count').textContent=state.jobs.length;
+ $('#folder-path').textContent=state.outputDir?.replace(/^\/Users\/[^/]+\//,'~/')||'';
+ $('#pause').textContent=state.paused?'继续队列':'暂停队列';
+ if(document.activeElement!==$('#proxy'))$('#proxy').value=state.settings?.proxy||'auto';
+ $('#engine').textContent=state.engine?.message||'正在检查口播识别…';
+ if(!state.jobs.length){if(lastSignature!=='empty'){$('#tasks').innerHTML='<div class="empty"><div class="empty-icon">↓</div><div class="empty-title">等待你的第一条链接</div><p>导出进度、需要协助的提示和已保存文件都会出现在这里</p></div>';lastSignature='empty'}return}
+ const sig=JSON.stringify(state.jobs.map(j=>[j.id,j.status,j.reusedAt,j.downloadStage,j.message,j.title,j.needsReview,j.access,j.autoTranscribe,j.candidates?.length,Math.floor(j.bytes/262144),Math.round(j.speed/10240),j.eta,j.transcript]));
+ if(sig===lastSignature)return;lastSignature=sig;
+ // Preserve playing preview nodes across progress updates.
+ for(const v of document.querySelectorAll('video[data-preview]'))previews.set(v.dataset.preview,v);
+ const fragment=document.createDocumentFragment();
+ for(const j of [...state.jobs].reverse()){
+  const row=el('article','task');row.dataset.id=j.id;
+  const main=el('div','task-main'),symbol=el('div','task-symbol '+j.status,j.status==='done'?'✓':j.status==='error'?'!':'↙');
+  const details=el('div','task-details');
+  details.append(el('div','task-name',(j.platformLabel?'['+j.platformLabel+'] ':'')+(j.title||'视频')));
+  let msg=j.message;
+  if(j.status==='downloading'&&j.downloadStage==='download')msg=`正在下载 ${size(j.bytes)}${j.total?' / '+size(j.total):''}${j.speed>0?' · '+size(j.speed)+'/秒':''}${j.eta?' · 预计剩余 '+time(j.eta):''}`;
+  if(j.status==='queued'){const ahead=state.jobs.slice(0,state.jobs.indexOf(j)).filter(x=>['queued','opening','waiting','downloading','cancelling'].includes(x.status)).length;msg=ahead?'等待前方 '+ahead+' 条任务完成':'即将开始下载'}
+  if(j.status==='done'&&j.reusedAt)msg='视频已保存在本地，直接可用 · '+j.media.duration.toFixed(1)+' 秒 · '+j.media.width+' × '+j.media.height;
+  else if(j.status==='done'&&j.downloadStarted&&j.downloadFinished)msg+=' · 用时 '+time((j.downloadFinished-j.downloadStarted)/1000);
+  details.append(el('div','task-message '+j.status,msg));
+  const buttons=el('div','row-buttons');
+  if(j.status==='waiting'&&j.access)buttons.append(button(j.access.kind==='verification'?'去完成验证':'去登录',()=>api('access',{id:j.id}),'small-primary'));
+  if(j.status==='done')buttons.append(button('查看文件',()=>api('reveal',{id:j.id})));
+  if(j.status==='done'&&j.reusedAt)buttons.append(button('重新下载',async()=>{await api('jobs',{text:j.url,force:true});await refresh()}));
+  if(['error','cancelled','interrupted'].includes(j.status))buttons.append(button('重试',()=>api('retry',{id:j.id})));
+  if(['queued','opening','waiting','downloading'].includes(j.status))buttons.append(button('跳过',()=>api('cancel',{id:j.id})));
+  const stageLabels={resolving:'解析中',download:'下载中',merge:'合并中',validating:'检查中'};
+  main.append(symbol,details,el('span','task-tag '+j.status,['opening','downloading'].includes(j.status)?stageLabels[j.downloadStage]||labels[j.status]:labels[j.status]||j.status),buttons);row.append(main);
+  if(j.status==='downloading'||j.status==='opening'){
+   const determinate=j.downloadStage==='download'&&j.total;
+   const p=el('div','progress'),bar=el('div',determinate?'':'indeterminate');if(determinate)bar.style.width=Math.min(100,j.bytes/j.total*100)+'%';p.append(bar);row.append(p);
+  }
+  if(!['error','cancelled','interrupted'].includes(j.status)&&j.transcript?.status!=='done'){
+   const choice=el('label','transcription-choice'),check=el('input');check.type='checkbox';check.checked=!!j.autoTranscribe;check.setAttribute('aria-label','转文字');
+   check.onchange=async()=>{check.disabled=true;try{await api('transcription-choice',{id:j.id,enabled:check.checked});await refresh()}catch(e){toast(e.message);check.checked=!check.checked}finally{check.disabled=false}};choice.append(check,document.createTextNode('转文字'));row.append(choice);
+   if(j.autoTranscribe&&j.status!=='done')choice.append(el('span','engine-note','下载完成后开始转写'));
+  }
+  if(j.status==='done'){
+   const t=j.transcript,speech=el('div','transcript-row'),controls=el('div','transcript-buttons');
+   speech.append(el('span','transcript-status '+(t?.status||''),t?.message||(j.autoTranscribe?'等待开始转文字':'需要文字时，勾选「转文字」')));
+   if(t?.status==='done'){
+    controls.append(button('查看文稿',()=>showTranscript(j),'small-primary'));
+    if(t.model!=='large-v3')controls.append(button('高精度重转',async()=>{await api('transcribe',{id:j.id});await refresh()},'secondary'));
+   }
+   else if(['queued','extracting','recognizing','writing'].includes(t?.status))controls.append(button('取消转写',()=>api('cancel-transcription',{id:j.id}),'text-button'));
+   else if(['error','cancelled','interrupted'].includes(t?.status))controls.append(button('重试转写',async()=>{await api('transcription-choice',{id:j.id,enabled:true});await refresh()},'secondary'));
+   speech.append(controls);
+   if(['extracting','recognizing','writing'].includes(t?.status)){const p=el('div','progress'),b=el('div');b.style.width=(t.progress||1)+'%';p.append(b);speech.append(p)}
+   row.append(speech);
+  }
+  if(j.needsReview&&j.status==='waiting'){
+   const cs=el('div','candidates');
+   for(const c of j.candidates.slice(0,8)){
+    const key=j.id+'-'+c.index,line=el('div','candidate');
+    line.append(el('span','candidate-info',`播放资源 ${c.index+1}${c.width?' · '+c.width+' × '+c.height:''}${c.size?' · '+size(c.size):''}`));
+    line.append(button('预览',async()=>{if(line.querySelector('video'))return;const v=el('video');v.controls=true;v.playsInline=true;v.dataset.preview=key;v.src='/api/preview/'+j.id+'/'+c.index+'?token='+token;v.onerror=()=>toast('预览暂不可用，请在播放窗口核对画面后再保存。');line.append(v);previews.set(key,v)} ,'secondary'));
+    line.append(button('保存这一条',()=>api('save',{id:j.id,index:c.index}),'small-primary'));
+    if(previews.has(key))line.append(previews.get(key));cs.append(line);
+   }
+   row.append(cs);
+  }
+  fragment.append(row);
+ }
+ $('#tasks').replaceChildren(fragment);
+}
+async function refresh(){try{state=await api('state');$('#connection').textContent='本机运行 · 文件存到本地';render()}catch(e){$('#connection').textContent='连接已断开，请重新打开应用'}}
+const intake=createAutoIntake({
+ getText:()=>$('#links').value,
+ submit:text=>api('jobs',{text}),
+ accepted:(text,d)=>{if($('#links').value.trim()===text)$('#links').value='';$('#link-count').textContent='粘贴后自动开始';$('#retry-input').hidden=true;toast(d.added?'已添加 '+d.added+' 条，正在自动下载'+(d.reused?'，另有 '+d.reused+' 条已保存在本地':''):d.reused?'视频已保存过，直接使用现有文件':'这些链接已在队列中');refresh()},
+ failed:e=>{error(e.message);$('#retry-input').hidden=false},
+ busy:value=>{busy=value;$('#link-count').textContent=value?'正在添加…':'粘贴后自动开始'}
+});
+$('#retry-input').onclick=()=>{error('');intake.flush()};
+let composing=false;
+$('#links').addEventListener('compositionstart',()=>{composing=true});
+$('#links').addEventListener('compositionend',()=>{composing=false;intake.schedule()});
+$('#links').addEventListener('input',()=>{const n=($('#links').value.match(/https?:\/\//g)||[]).length;$('#link-count').textContent=n?'检测到 '+n+' 个网址，即将自动下载':'粘贴后自动开始';error('');if(!composing)intake.schedule()});
+$('#links').addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='Enter'){e.preventDefault();intake.flush()}});
+$('#save-network').onclick=async()=>{try{await api('settings',{proxy:$('#proxy').value.trim()||'auto'});toast('网络设置已保存');await refresh()}catch(e){toast(e.message)}};
+$('#folder').onclick=()=>api('folder',{}).catch(e=>toast(e.message));
+$('#pause').onclick=async()=>{try{await api('pause',{paused:!state.paused});await refresh();toast(state.paused?'队列已暂停，当前任务继续处理':'队列已继续')}catch(e){toast(e.message)}};
+$('#clear').onclick=async()=>{try{await api('clear',{});await refresh()}catch(e){toast(e.message)}};
+$('#close-transcript').onclick=()=>$('#transcript-modal').close();
+$('#copy-transcript').onclick=async()=>{const field=$('#transcript-text'),b=$('#copy-transcript');field.focus();field.select();try{if(!document.execCommand('copy')){await navigator.clipboard.writeText(field.value)}b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制全文',2200)}catch{$('#transcript-count').textContent='请按 ⌘C 复制已选中的文稿'}};
+$('#open-txt').onclick=()=>api('open-transcript',{id:currentTranscriptId,format:'txt'}).catch(e=>toast(e.message));
+$('#open-srt').onclick=()=>api('open-transcript',{id:currentTranscriptId,format:'srt'}).catch(e=>toast(e.message));
+refresh();setInterval(refresh,1400);
+</script>
+</body></html>

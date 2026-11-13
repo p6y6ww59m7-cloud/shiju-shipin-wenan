@@ -1,0 +1,15 @@
+{
+  "name": "shiju-shipin-wenan",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test --test-concurrency=2 test/*.test.mjs video-engine/test/*.test.mjs",
+    "setup:video": "python3 video-engine/scripts/setup_runtime.py",
+    "verify:video": "python3 video-engine/scripts/setup_runtime.py --verify-only",
+    "build:mac": "python3 native/build.py",
+    "install:mac": "python3 scripts/install_macos.py",
+    "verify:flow": "node scripts/verify-video-flow.mjs"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "repository": "https://github.com/p6y6ww59m7-cloud/douyin-exporter",
+  "commit": "46df927fd21c708eecdba90b6c498126e619327c",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "9aba8e49806e59d7fbb50e6164917b6f071d91e6c65ffa226282294819b5a9f2"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "f28509260be865b42a40a03debed5caa2495dd6c1b812e1c68eab736714bb527"
+    },
+    {
+      "path": "README.md",
+      "sha256": "4674d127a68405827de7f433d98ec8a22809b0a2aa0a6c6c7938cc910c5b2377"
+    },
+    {
+      "path": "browser.mjs",
+      "sha256": "3b33f25ffece6a15dca969b4e9f2e9c63284f798d17e440bc67276ee1641fc3b"
+    },
+    {
+      "path": "cache.mjs",
+      "sha256": "d876dc53be72a1b166e4a2169a9f84b27f3513b1e37f94a6462514a4823d03dd"
+    },
+    {
+      "path": "core.mjs",
+      "sha256": "e9c7ace3b8bf4a29d2d6a6a081de7c5544cce57dd22e484d007ca5ffd2d24f9f"
+    },
+    {
+      "path": "downloader.mjs",
+      "sha256": "342045a99b22ef3f67e3f00e01d87fdc9436453827e3233c4eb621d9cd41ef81"
+    },
+    {
+      "path": "engine-session.mjs",
+      "sha256": "8b5a10951ce0724dcf9ac9d9b73b48eb105b8d8f319b8b35096d9a4d5510bbdd"
+    },
+    {
+      "path": "native/AudioPrepare.swift",
+      "sha256": "9bf40540ac556ef7b0f645cde7854660db1a4f56787aebb0e34fe9c9a8746705"
+    },
+    {
+      "path": "native/Icon.swift",
+      "sha256": "902be1e76c0b27e339d7288c3d8ac64757676d83982d4ac91526eb341aaa0d9a"
+    },
+    {
+      "path": "native/Launcher.swift",
+      "sha256": "68efcc045b64317479f62256b068a351baa3a4c150029f649b8ef952c10504ca"
+    },
+    {
+      "path": "native/VideoProbe.swift",
+      "sha256": "3cc2111f26f706460cde811e9a4d721be439ef98d89f199c23b7d20f6eb9d215"
+    },
+    {
+      "path": "native/build.py",
+      "sha256": "61e08eea1d1ef44b92c226833d091d3534d5943fc2d6b2828a26a2a6e4ccab70"
+    },
+    {
+      "path": "native/vendor/Node-LICENSE",
+      "sha256": "5888dbb9a1d2b18f2c3e6c5f6af1b39de658372b402a0577b002777f14c62ace"
+    },
+    {
+      "path": "native/vendor/Silero-VAD-LICENSE",
+      "sha256": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b"
+    },
+    {
+      "path": "native/vendor/Whisper-model-LICENSE",
+      "sha256": "b5d65a59060e68c4ff940e1eddfa6f94b2d68fdf58ed7f4dd57721c997e35e9d"
+    },
+    {
+      "path": "native/vendor/ffmpeg-LICENSE",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "native/vendor/ffmpeg-static-LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "native/vendor/whisper-LICENSE",
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+    },
+    {
+      "path": "native/vendor/yt-dlp-LICENSE",
+      "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c"
+    },
+    {
+      "path": "package.json",
+      "sha256": "ea3be18a6042fab264ab4bd23e16bf0374655a366cec6d4a992160538a5fa87d"
+    },
+    {
+      "path": "platforms.mjs",
+      "sha256": "0e1ee85613cc0607f870b63f570aa26f4d2d51bf82513938a2f60a55ae2a26de"
+    },
+    {
+      "path": "proxy-discovery.mjs",
+      "sha256": "48a5c605801fbfcafe15661f8a0738e1e85898943864b3ec960f472f2ce00afc"
+    },
+    {
+      "path": "public/index.html",
+      "sha256": "dcb1d03641afc5df74952e2afff1555a06451e726231303e1830d141e54162f8"
+    },
+    {
+      "path": "public/intake.mjs",
+      "sha256": "5eec05c8b45fb927c7e3fb06a429a06b7c25322371e881ad10af2e292bed82c6"
+    },
+    {
+      "path": "runtime-manifest.json",
+      "sha256": "cfc8f2f3530c661d1aaaaa2fa23f9374bc9f55134528c2211ae6c41824491de8"
+    },
+    {
+      "path": "scripts/package_release.py",
+      "sha256": "9868f7a5fac4265fd5610575ab8d8defb13d18ac170dd7e381797d881d33ee66"
+    },
+    {
+      "path": "scripts/restore_release.py",
+      "sha256": "a4d4b66a37aad494633143edbb545f338128ee3ca0581b24f1218cd5daa94884"
+    },
+    {
+      "path": "scripts/setup_runtime.py",
+      "sha256": "4b363867a9e239c5dfa18a14d042207e0c3446c2eacb14c0917b93a65a0da8e2"
+    },
+    {
+      "path": "server.mjs",
+      "sha256": "0674c8cec52b3b16876392e4152c089468caf274e48ec73e3190f1b1e3347117"
+    },
+    {
+      "path": "test/cache.test.mjs",
+      "sha256": "777c9f8bb3b3fc289b44966ed6a123523b9728b0aed72bf3911e1610679f44a7"
+    },
+    {
+      "path": "test/core.test.mjs",
+      "sha256": "fdd81ebb0cd2066e910110ab6b2172be19bb97daedaa9fbdb33c570981ada46f"
+    },
+    {
+      "path": "test/engine-session.test.mjs",
+      "sha256": "b1a51bd0fd29ae96ace4cbb676d18259590b6a6db984c7f5e5d297c685db49a8"
+    },
+    {
+      "path": "test/platforms.test.mjs",
+      "sha256": "c1b40099e26d67967d04eeff4bfb3844b8926d7f3d613b13f89cabb25c395106"
+    },
+    {
+      "path": "test/proxy-discovery.test.mjs",
+      "sha256": "9b9c949930027d048e7c61898e957186e9c88cb171fa6865f01a79cdf08ee2af"
+    },
+    {
+      "path": "test/transcription.test.mjs",
+      "sha256": "8db1ad36e6ad268a78a18841c3e17ab611c208ecf526c239ffa494c90fe17a5e"
+    },
+    {
+      "path": "test/workflow.test.mjs",
+      "sha256": "8f6e850ea64d54af97b7fd423051e8cdf5011aa6e4a57e043174e7064cdc47d4"
+    },
+    {
+      "path": "transcription.mjs",
+      "sha256": "44bd69fa57974d4ba0ab84b1c0fe2fc29daed626d7c3a80f4552088ef4b2d592"
+    },
+    {
+      "path": "workflow.mjs",
+      "sha256": "34235529208c2efc44ee0af4d56376befa6c4ff540019a3d7ce440c82060dd14"
+    }
+  ],
+  "publicSnapshotChanges": [
+    "README.md: public documentation without local history",
+    "test/transcription.test.mjs: generic synthetic fixtures"
+  ]
+}

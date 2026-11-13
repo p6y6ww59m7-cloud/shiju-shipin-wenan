@@ -1,0 +1,17 @@
+{
+  "name": "douyin-local-exporter",
+  "version": "1.6.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "setup": "python3 scripts/setup_runtime.py",
+    "verify:runtime": "python3 scripts/setup_runtime.py --verify-only",
+    "test": "node --test test/*.test.mjs",
+    "build:mac": "python3 native/build.py",
+    "package:release": "python3 scripts/package_release.py"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
